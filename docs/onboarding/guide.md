@@ -1,316 +1,318 @@
-# Welcome to Sure!
+# Üdvözöl a Sure!
 
-This guide aims to assist new users through:
+Ez az útmutató segít az új felhasználóknak:
 
-1. Creating a Sure account
-2. Adding your first accounts
-3. Recording transactions
+1. Sure fiók létrehozásában
+2. Az első számlák hozzáadásában
+3. Tranzakciók rögzítésében
 
-This guide also covers the differences between **asset** and **liability** accounts, a key concept for using and understanding balances in Sure!
+Az útmutató kitér az **eszköz** és **kötelezettség** számlák közötti különbségekre is – ez egy kulcsfontosságú fogalom a Sure egyenlegeinek megértéséhez!
 
 > [!IMPORTANT]
-> Sure is evolving quickly. If you find something inaccurate while following this guide, please:
+> A Sure gyorsan fejlődik. Ha valami pontatlanságot találsz az útmutató követése közben, kérjük:
 > 
-> - Ask in the [Discord](https://discord.gg/36ZGBsxYEK)
-> - Open an [issue](https://github.com/we-promise/sure/issues/new/choose)
-> - Or if you know the answer, open a [PR](https://github.com/we-promise/sure/compare)!
+> - Kérdezz a [Discordon](https://discord.gg/36ZGBsxYEK)
+> - Nyiss egy [issue-t](https://github.com/we-promise/sure/issues/new/choose)
+> - Vagy ha tudod a választ, nyiss egy [PR-t](https://github.com/we-promise/sure/compare)!
 
 
-## 1. Creating your Sure Account
+## 1. Sure fiókod létrehozása
 
-Once Sure is installed, open a browser and navigate to [localhost:3000](http://localhost:3000/sessions/new).<br />
-You will see the **login page** (pictured below). Since we do not have an account yet, click on **Sign Up** to begin. 
+Miután a Sure telepítve van, nyiss egy böngészőt és navigálj a [localhost:3000](http://localhost:3000/sessions/new) címre.<br />
+Látni fogod a **bejelentkezési oldalt** (lásd lent). Mivel még nincs fiókunk, kattints a **Sign Up** gombra a kezdéshez.
 
-<img width="2508" height="1314" alt="Landing page on a fresh install." src="https://github.com/user-attachments/assets/2319dc87-5615-4473-bebc-8360dd983367" />
+<img width="2508" height="1314" alt="Kezdőoldal friss telepítés után." src="https://github.com/user-attachments/assets/2319dc87-5615-4473-bebc-8360dd983367" />
 <br />
 <br />
 
-You'll be guided through a short series of screens to set your **login details**, **personal information**, and **preferences**.<br />
-When you arrive at the main dashboard, showing **No accounts yet**, you're all set up!
+Néhány rövid képernyőn keresztül beállíthatod a **bejelentkezési adataidat**, **személyes információidat** és **preferenciáidat**.<br />
+Ha megérkezel a főoldalra, ahol **Még nincsenek számlák** felirat látható – készen vagy!
 
-<img width="2508" height="1314" alt="Blank home screen of Sure, with no accounts yet." src="https://github.com/user-attachments/assets/f06ba8e2-f188-4bf9-98a7-fdef724e9b5a" />
+<img width="2508" height="1314" alt="A Sure üres főoldala, számlák nélkül." src="https://github.com/user-attachments/assets/f06ba8e2-f188-4bf9-98a7-fdef724e9b5a" />
 <br />
 <br />
 
-> [!Note]
-> The next sections of this guide cover how to **manually add accounts and transactions** in Sure.<br />
-> If you'd like to use an integration with a data provider instead, see:
+> [!NOTE]
+> Az útmutató következő részei bemutatják, hogyan lehet **manuálisan hozzáadni számlákat és tranzakciókat** a Sure-ban.<br />
+> Ha inkább adatszolgáltatói integrációt szeretnél használni, lásd:
 > 
 > - [**Lunch Flow**](https://www.lunchflow.app/)
 > - [**Plaid**](/docs/hosting/plaid.md)
 > - [**SimpleFIN**](https://beta-bridge.simplefin.org/)
-> - [**Enable Banking**](https://enablebanking.com/) (beta)
-> - [**CoinStats**](https://coinstats.app/) (beta)
+> - [**Enable Banking**](https://enablebanking.com/) (béta)
+> - [**CoinStats**](https://coinstats.app/) (béta)
 >
-> Even if you use an integration, we still recommend reading through this guide to understand **account types** and how they work in Sure.
+> Még ha integrációt is használsz, javasoljuk, hogy olvasd végig ezt az útmutatót, hogy megértsd a **számlatípusokat** és azok működését a Sure-ban.
 
 
-## 2. Account Types in Sure
+## 2. Számlatípusok a Sure-ban
 
-Sure supports several account types, which are grouped into **Assets** (things you own) and **Debts/Liabilities** (things you owe):
+A Sure többféle számlatípust támogat, amelyek **Eszközökre** (amid van) és **Tartozásokra/Kötelezettségekre** (amivel tartozol) oszthatók:
 
-| Assets      | Debts/Liabilities |
-| ----------- | ----------------- |
-| Cash        | Credit Card       |
-| Investment  | Loan              |
-| Crypto      | Other Liability   |
-| Property    |                   |
-| Vehicle     |                   |
-| Other Asset |                   |
-
-
-## 3. How Asset Accounts Work
-
-Cash, checking and savings accounts **increase** when you add money and **decrease** when you spend money.
-
-Example:
-
-- Starting balance: $500
-- Add an expense of $20 -> balance is now $480
-- Add an income of $100 -> balance is now $580
+| Eszközök         | Tartozások/Kötelezettségek |
+| ---------------- | -------------------------- |
+| Készpénz         | Hitelkártya                |
+| Befektetés       | Hitel                      |
+| Kripto           | Egyéb kötelezettség        |
+| Ingatlan         |                            |
+| Jármű            |                            |
+| Egyéb eszköz     |                            |
 
 
-## 4. How Debt Accounts Work (Liabilities)
+## 3. Hogyan működnek az eszközszámlák?
 
-Liability accounts track how much money you **owe**, so the math can feel *backwards* compared to an asset account.
+A készpénz-, folyószámla- és megtakarítási számlák **növekednek**, amikor pénzt helyezel el, és **csökkennek**, amikor pénzt költesz.
 
-**Key rule:**
+Példa:
 
-- **Positive Balances** = you owe money
-- **Negative balances** = the bank owes *you* (e.g. overpayment or refund)
+- Kezdő egyenleg: 500 $
+- 20 $ kiadás rögzítése → az egyenleg most 480 $
+- 100 $ bevétel rögzítése → az egyenleg most 580 $
 
-**Transactions behave like this:**
 
-- **Expenses** (e.g. purchases) => increase your debt (you owe more)
-- **Payments or refunds** => decrease your debt (you owe less)
+## 4. Hogyan működnek az adósságszámlák (kötelezettségek)?
 
-Credit Card example:
+A kötelezettségszámlák azt követik, hogy mennyi pénzzel **tartozol**, ezért a számítás *fordítottnak* tűnhet az eszközszámlákhoz képest.
 
-1. Balance: **$200 owed**
-2. Spend $20 => You now owe $220 (balance goes *up* in red)
-3. Pay off $50 => You now owe $170 (balance goes *down* in green)
+**Alapszabály:**
 
-Overpayment Example:
+- **Pozitív egyenleg** = tartozol pénzzel
+- **Negatív egyenleg** = a bank tartozik *neked* (pl. túlfizetés vagy visszatérítés esetén)
 
-1. Balance: -$44 (bank owes you $44)
-2. Spend $1 => Bank now owes you **$43** (balance shown as -$43, moving towards zero)
+**A tranzakciók így viselkednek:**
+
+- **Kiadások** (pl. vásárlások) => növelik a tartozásodat (többel tartozol)
+- **Befizetések vagy visszatérítések** => csökkentik a tartozásodat (kevesebbet tartozol)
+
+Hitelkártya példa:
+
+1. Egyenleg: **200 $ tartozás**
+2. 20 $ elköltve => Most 220 $-ral tartozol (az egyenleg *nő*, piros)
+3. 50 $ befizetve => Most 170 $-ral tartozol (az egyenleg *csökken*, zöld)
+
+Túlfizetés példa:
+
+1. Egyenleg: -44 $ (a bank 44 $-ral tartozik neked)
+2. 1 $ elköltve => A bank most **43 $-ral** tartozik neked (az egyenleg -43 $-ként jelenik meg, nullához közeledve)
 
 > [!TIP]
-> Why does it work this way? This matches standard accounting and what your credit card provider shows online. Think of a liability balance as "**Amount Owed**", not "available cash."
+> Miért működik így? Ez megfelel a standard könyvelési elveknek, és ugyanúgy jelenik meg, ahogy a hitelkártya-szolgáltatód mutatja online. Gondolj a kötelezettség egyenlegére mint „**Tartozás összege**"-re, nem mint elérhető készpénzre.
 
 
-## 5. Quick Reference: Assets vs. Liability Behavior
+## 5. Gyors összefoglaló: Eszköz vs. Kötelezettség viselkedése
 
-| Action           | Asset Account (e.g. Checking) | Liability Account (e.g. Credit Card) |
-| ---------------- | ----------------------------- | ------------------------------------ |
-| Spend $20        | Balance ↓ $20                 | Balance ↑ $20 (more debt)            |
-| Receive $50      | Balance ↑ $50                 | Balance ↓ $50 (less debt)            |
-| Negative Balance | Overdraft                     | Bank owes *you* money                |
+| Művelet           | Eszközszámla (pl. folyószámla) | Kötelezettségszámla (pl. hitelkártya) |
+| ----------------- | ------------------------------ | ------------------------------------- |
+| 20 $ elköltve     | Egyenleg ↓ 20 $                | Egyenleg ↑ 20 $ (több a tartozás)     |
+| 50 $ megkapva     | Egyenleg ↑ 50 $                | Egyenleg ↓ 50 $ (kevesebb a tartozás) |
+| Negatív egyenleg  | Folyószámlahitel               | A bank tartozik *neked*               |
 
 
-## 6. Adding Accounts
+## 6. Számlák hozzáadása
 
-For this example we'll add a **Savings Account**.<br />
+Ebben a példában egy **Megtakarítási számlát** adunk hozzá.<br />
 
->[!TIP]
->If you're adding a **credit card**, **loan**, or any other **debt**, be sure to select a **Credit Card** or **Liability** account type instead of **Cash**. This will ensure balances update correctly and match what your bank shows.
+> [!TIP]
+> Ha **hitelkártyát**, **hitelt** vagy bármilyen **tartozást** adsz hozzá, ügyelj arra, hogy **Hitelkártya** vagy **Kötelezettség** számlatípust válassz a **Készpénz** helyett. Ez biztosítja, hogy az egyenlegek helyesen frissüljenek és megegyezzenek azzal, amit a bankod mutat.
 
-Most bank accounts (checking, savings, money market) are **Cash Accounts**
-1. Click **+ Add Account** → **Cash** → **Enter Account Balance**
-2. Fill in details such as:
-   - Account name
-   - Current Balance
-   - Account Subtype (This is where you specify checking, savings, or other)
-3. Click **Create Account** when you are ready to proceed.
+A legtöbb bankszámla (folyószámla, megtakarítás, pénzpiaci számla) **Készpénzszámla**.
+1. Kattints a **+ Számla hozzáadása** → **Készpénz** → **Számlaegyenleg megadása** lehetőségre
+2. Töltsd ki az adatokat:
+   - Számla neve
+   - Jelenlegi egyenleg
+   - Számla altípusa (itt adhatod meg, hogy folyószámla, megtakarítás vagy egyéb)
+3. Kattints a **Számla létrehozása** gombra, amikor készen állsz.
 
-<img width="500" height="303" alt="Cash Account creation menu" src="https://github.com/user-attachments/assets/e564a447-c85e-403e-979b-efe770ea2a61" />
+<img width="500" height="303" alt="Készpénzszámla létrehozási menü" src="https://github.com/user-attachments/assets/e564a447-c85e-403e-979b-efe770ea2a61" />
 <br />
 <br />
 
-Once created, you'll return to the **Home** screen.<br />
-You'll now see:
-- Your new cash account in the **Accounts** list (left side)
-- An overview of your accounts in the center, under the net worth bar.
+A létrehozás után visszakerülsz a **Főoldalra**.<br />
+Most látni fogod:
+- Az új készpénzszámládat a **Számlák** listában (bal oldal)
+- A számlák áttekintését a középső részen, a nettó vagyon sáv alatt.
 
-To get this bar moving let's add some transactions!
+Hogy ez a sáv mozogni kezdjen, adjunk hozzá néhány tranzakciót!
 
-<img width="2508" height="1314" alt="Home screen of Sure, showing one account and no transactions." src="https://github.com/user-attachments/assets/7766a0cd-6b20-48f0-9ba2-87dfddd77236" />
+<img width="2508" height="1314" alt="A Sure főoldala egy számlával, tranzakciók nélkül." src="https://github.com/user-attachments/assets/7766a0cd-6b20-48f0-9ba2-87dfddd77236" />
 
-## 7. Adding Transactions
 
-To add a transaction:
-1. Go to the **Transactions** page (left sidebar, under **Home**, above **Budgets**)
-2. Click **+ New Transaction** (top right)
-3. Choose the transaction type:
-   - **Expense** → Spending money
-   - **Income** → Receiving money
-   - **Transfer** → Move money between accounts
-4. Enter the details, then click **Add transaction**
+## 7. Tranzakciók hozzáadása
 
-You will now see the transaction you added in your **transaction history**, as well as the **net worth chart** updating accordingly.
+Tranzakció hozzáadásához:
+1. Menj a **Tranzakciók** oldalra (bal oldalsáv, a **Főoldal** alatt, a **Költségvetések** felett)
+2. Kattints a **+ Új tranzakció** gombra (jobb felső sarok)
+3. Válaszd ki a tranzakció típusát:
+   - **Kiadás** → Pénzköltés
+   - **Bevétel** → Pénzbevétel
+   - **Átutalás** → Pénz mozgatása számlák között
+4. Add meg az adatokat, majd kattints a **Tranzakció hozzáadása** gombra
 
-<img width="500" height="512" alt="Filled-out expense form" src="https://github.com/user-attachments/assets/7c1d38d1-edb8-4d12-8b3e-bbef4836cc92" />
+Ezután látni fogod a hozzáadott tranzakciót a **tranzakciótörténetedben**, valamint a **nettó vagyon diagram** is ennek megfelelően frissül.
 
-## 8. Managing Investment Accounts
+<img width="500" height="512" alt="Kitöltött kiadás űrlap" src="https://github.com/user-attachments/assets/7c1d38d1-edb8-4d12-8b3e-bbef4836cc92" />
 
-If you're tracking investments in Sure, there are additional features to help you manage your portfolio accurately.
 
-### Cost Basis Tracking
+## 8. Befektetési számlák kezelése
 
-Cost basis tracking helps you understand the original purchase price of your investments, which is essential for calculating returns and tax reporting.
+Ha befektetéseket is követsz a Sure-ban, további funkciók állnak rendelkezésedre a portfóliód pontos kezeléséhez.
 
-#### Cost Basis Sources
+### Bekerülési érték (Cost Basis) követése
 
-Sure tracks cost basis from three sources:
+A bekerülési érték követése segít megérteni a befektetéseid eredeti vételárát, ami elengedhetetlen a hozamszámításhoz és az adóbevalláshoz.
 
-| Source | Description |
-| --- | --- |
-| **Manual** | User-entered values that you set directly |
-| **Calculated** | Computed from your buy trades and transaction history |
-| **Provider** | Imported from your financial institution (Plaid, SimpleFin, etc.) |
+#### Bekerülési érték forrásai
 
-#### Priority Hierarchy
+A Sure három forrásból követi a bekerülési értéket:
 
-When multiple sources provide cost basis data, Sure uses this priority:
+| Forrás          | Leírás                                                        |
+| --------------- | ------------------------------------------------------------- |
+| **Manuális**    | Általad közvetlenül megadott értékek                          |
+| **Kalkulált**   | Vételi tranzakcióidból és tranzakciótörténetedből számított   |
+| **Szolgáltató** | Pénzügyi intézményedtől importált (Plaid, SimpleFin, stb.)   |
 
-**Manual > Calculated > Provider**
+#### Prioritási sorrend
 
-This means:
-- Manual values always take precedence
-- Calculated values override provider data
-- Provider data is used when no other source is available
+Ha több forrás is ad bekerülési értéket, a Sure ezt a prioritást alkalmazza:
 
-#### Lock Protection
+**Manuális > Kalkulált > Szolgáltató**
 
-When you manually set a cost basis, Sure automatically locks it to prevent automatic updates from overwriting your value. This ensures your manual entries remain intact during account syncs.
+Ez azt jelenti:
+- A manuális értékek mindig elsőbbséget élveznek
+- A kalkulált értékek felülírják a szolgáltatói adatokat
+- A szolgáltatói adatokat akkor használja, ha más forrás nem áll rendelkezésre
 
-#### Setting Cost Basis Manually
+#### Zárolás védelme
 
-You can set cost basis in two ways:
+Amikor manuálisan állítasz be bekerülési értéket, a Sure automatikusan zárolja azt, hogy az automatikus frissítések ne írják felül. Ez biztosítja, hogy a manuális bejegyzéseid megmaradjanak a szinkronizálások során.
 
-**From the Holdings List:**
+#### Bekerülési érték manuális beállítása
 
-1. Navigate to your investment account
-2. Find the holding in your portfolio
-3. Click the pencil icon next to the average cost
-4. Enter either:
-   - **Total cost basis**: The total amount you paid for all shares
-   - **Per-share cost**: The average price per share
-5. The form automatically converts between total and per-share values
-6. Click **Save**
+A bekerülési értéket kétféleképpen állíthatod be:
 
-The system will show a confirmation if you're overwriting an existing cost basis.
+**A Pozíciók listájából:**
+
+1. Navigálj a befektetési számládhoz
+2. Keresd meg a pozíciót a portfóliódban
+3. Kattints az átlagos bekerülési érték melletti ceruza ikonra
+4. Add meg:
+   - **Teljes bekerülési érték**: az összes részvényért fizetett teljes összeg
+   - **Részvényenkénti bekerülési érték**: az átlagos részvényenkénti ár
+5. Az űrlap automatikusan konvertál a kétféle érték között
+6. Kattints a **Mentés** gombra
+
+A rendszer megerősítést kér, ha meglévő bekerülési értéket írsz felül.
 
 <img width="531" height="597" alt="image" src="https://github.com/user-attachments/assets/b5a6aafe-de9e-447e-95a6-6000e68fb695" />
 
+**A Pozíció részletező panelből:**
 
-**From the Holding Drawer:**
+1. Kattints egy pozícióra a részletező panel megnyitásához
+2. Az Áttekintés részben kattints az „Átlagos bekerülési érték" melletti ceruza ikonra
+3. Add meg a bekerülési értéket (összesített vagy részvényenkénti)
+4. Kattints a **Mentés** gombra
 
-1. Click on a holding to open its detail drawer
-2. In the Overview section, click the pencil icon next to "Average Cost"
-3. Enter the cost basis (total or per-share)
-4. Click **Save**
+Mentés után látni fogod:
+- Egy lakat ikont, ami jelzi, hogy az érték védett
+- Egy forrásjelzést: „(manuális)"
 
-After saving, you'll see:
-- A lock icon indicating the value is protected
-- A source label showing "(manual)"
+#### Zárolás feloldása
 
-#### Unlocking Cost Basis
+Ha engedélyezni szeretnéd az automatikus frissítéseket a bekerülési érték újraszámításához:
 
-If you want to allow automatic updates to recalculate your cost basis:
+1. Nyisd meg a pozíció részletező panelt
+2. Görgess a **Beállítások** részhez
+3. Keresd meg a „Bekerülési érték zárolva" opciót
+4. Kattints a **Feloldás** gombra
 
-1. Open the holding drawer
-2. Scroll to the **Settings** section
-3. Find "Cost basis locked"
-4. Click **Unlock**
-
-After unlocking:
-- The lock icon disappears
-- Future syncs can update the cost basis
-- Calculated values (from trades) will replace the manual value
+Feloldás után:
+- A lakat ikon eltűnik
+- A jövőbeli szinkronizálások frissíthetik a bekerülési értéket
+- A kalkulált értékek (tranzakciókból) felváltják a manuális értéket
 
 <img width="529" height="231" alt="image" src="https://github.com/user-attachments/assets/89d4c64f-7151-4702-b79f-1e22d47a2bee" />
 
-#### Bidirectional Conversion
+#### Kétirányú konverzió
 
-The cost basis editor provides real-time conversion between total and per-share values:
+A bekerülési érték szerkesztő valós idejű konverziót biztosít az összesített és a részvényenkénti értékek között:
 
-- Enter total cost → automatically calculates per-share cost
-- Enter per-share cost → automatically calculates total cost
+- Összesített költség megadása → automatikusan kiszámítja a részvényenkénti értéket
+- Részvényenkénti érték megadása → automatikusan kiszámítja az összesített értéket
 
-This makes it easy to enter cost basis in whichever format you have available.
+Ez megkönnyíti a bekerülési érték megadását, bármelyik formátumban is áll rendelkezésedre az adat.
 
-### Investment Activity Labels
+### Befektetési tevékenység címkék
 
-Activity labels help you classify and understand investment transactions. They appear as badges in your transaction list and can be used to organize and filter your investment activity.
+A tevékenység címkék segítenek osztályozni és megérteni a befektetési tranzakciókat. Jelzőként jelennek meg a tranzakciólistádban, és használhatók a befektetési tevékenységed rendszerezéséhez és szűréséhez.
 
-#### Available Activity Types
+#### Elérhető tevékenységtípusok
 
-Sure supports these investment activity labels:
+A Sure ezeket a befektetési tevékenység címkéket támogatja:
 
-| Label | Description |
-| --- | --- |
-| **Buy** | Purchase of securities |
-| **Sell** | Sale of securities |
-| **Contribution** | Money added to the investment account |
-| **Withdrawal** | Money removed from the investment account |
-| **Dividend** | Dividend payments received |
-| **Interest** | Interest earned |
-| **Reinvestment** | Dividends or distributions reinvested |
-| **Sweep In** | Cash swept into the account |
-| **Sweep Out** | Cash swept out of the account |
-| **Fee** | Account or transaction fees |
-| **Exchange** | Currency or security exchanges |
-| **Transfer** | Transfers between accounts |
-| **Other** | Miscellaneous transactions |
+| Címke             | Leírás                                      |
+| ----------------- | ------------------------------------------- |
+| **Vétel**         | Értékpapírok vásárlása                      |
+| **Eladás**        | Értékpapírok eladása                        |
+| **Befizetés**     | A befektetési számlára utalt pénz           |
+| **Kifizetés**     | A befektetési számláról kivett pénz         |
+| **Osztalék**      | Kapott osztalékfizetések                    |
+| **Kamat**         | Megszerzett kamat                           |
+| **Újrabefektetés**| Újrabefektetett osztalékok vagy kifizetések |
+| **Beáramlás**     | Számlára áramló készpénz                    |
+| **Kiáramlás**     | Számláról kiáramló készpénz                 |
+| **Díj**           | Számla- vagy tranzakciós díjak              |
+| **Váltás**        | Deviza- vagy értékpapírcsere                |
+| **Átutalás**      | Számlák közötti átutalások                  |
+| **Egyéb**         | Vegyes tranzakciók                          |
 
-#### Setting Activity Labels
+#### Tevékenység címkék beállítása
 
-You can set activity labels in two ways:
+A tevékenység címkéket kétféleképpen állíthatod be:
 
-**Manually for Individual Transactions:**
+**Manuálisan, egyedi tranzakcióknál:**
 
-1. Open a transaction from an investment or crypto account
-2. Scroll to the **Settings** section
-3. Find "Activity type"
-4. Select a label from the dropdown
-5. The change saves automatically
+1. Nyiss meg egy tranzakciót egy befektetési vagy kripto számlán
+2. Görgess a **Beállítások** részhez
+3. Keresd meg a „Tevékenység típusa" opciót
+4. Válassz egy címkét a legördülő menüből
+5. A változtatás automatikusan mentődik
 
-**Automatically with Rules:**
+**Automatikusan, szabályokkal:**
 
-Create rules to automatically label transactions based on patterns:
+Hozz létre szabályokat a tranzakciók automatikus címkézéséhez minták alapján:
 
-1. Go to **Settings > Rules**
-2. Create a new rule
-3. Set conditions (e.g., "IF transaction name contains 'DIVIDEND'")
-4. Add action: "Set investment activity label"
-5. Choose the label (e.g., "Dividend")
-6. Save the rule
+1. Menj a **Beállítások > Szabályok** menübe
+2. Hozz létre egy új szabályt
+3. Állíts be feltételeket (pl. „HA a tranzakció neve tartalmazza: 'DIVIDEND'")
+4. Add hozzá a műveletet: „Befektetési tevékenység címke beállítása"
+5. Válaszd ki a címkét (pl. „Osztalék")
+6. Mentsd el a szabályt
 
 <img width="577" height="666" alt="image" src="https://github.com/user-attachments/assets/6660a3cc-af78-4199-8edc-18c198bbaad3" />
 
-Example rules:
-- IF name contains "DIVIDEND" THEN set label to "Dividend"
-- IF name contains "INTEREST" THEN set label to "Interest"
-- IF name contains "FEE" THEN set label to "Fee"
+Példa szabályok:
+- HA a név tartalmazza: „DIVIDEND" → állítsd a címkét: „Osztalék"
+- HA a név tartalmazza: „INTEREST" → állítsd a címkét: „Kamat"
+- HA a név tartalmazza: „FEE" → állítsd a címkét: „Díj"
 
-Rules apply automatically to new transactions and can be run on existing transactions.
+A szabályok automatikusan érvényesülnek az új tranzakciókra, és futtathatók a meglévő tranzakciókon is.
 
-#### Viewing Activity Labels
+#### Tevékenység címkék megtekintése
 
-Activity labels appear as badges in:
-- Transaction lists
-- Transaction detail drawers
-- Account activity views
+A tevékenység címkék jelzőként jelennek meg:
+- Tranzakciólistákban
+- Tranzakció részletező panelekben
+- Számla-tevékenység nézetekben
 
-They help you quickly identify the nature of each investment transaction without reading the full transaction name.
+Segítenek gyorsan azonosítani az egyes befektetési tranzakciók jellegét anélkül, hogy el kellene olvasnod a teljes tranzakció nevet.
 
-## 9. Next Steps
 
-Now that you have one account and your first transaction:
-- Explore the other account types that Sure offers, adding ones relevant to your finances.
-- **Categorize** and **Tag** transactions for better searching and reporting.
-- Experiment with **Budgets** to track your spending habits.
-- If you have many historical transactions, use **Bulk Import** to load them in.
+## 9. Következő lépések
 
-More detailed user guides for these features are coming soon™.
+Most, hogy van egy számlád és az első tranzakciód:
+- Fedezd fel a Sure által kínált többi számlatípust, és add hozzá a pénzügyeidhez relevánsakat.
+- **Kategorizáld** és **jelöld meg** (tag) a tranzakciókat a jobb kereshetőség és riportolás érdekében.
+- Kísérletezz a **Költségvetések** funkcióval a kiadási szokásaid nyomon követéséhez.
+- Ha sok historikus tranzakciód van, használd a **Tömeges importálást** azok betöltéséhez.
+
+A funkciók részletesebb útmutatói hamarosan érkeznek™.
